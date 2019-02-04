@@ -102,7 +102,7 @@ if(message.content === prefix + "help") {
       console.log("Un utilisateur a effectué la commande d'info !")
   }
     
-      if(message.content === prefix + "info") {
+      if(message.content === prefix + "M.catt") {
       var mc_embed = new Discord.RichEmbed()
       .setColor("#40A497")
       .setTitle("⊂ヽ 
