@@ -62,6 +62,17 @@ if(message.content === prefix + "help") {
     .setTimestamp()
     message.channel.send(fun_embed);
   }
+    
+      if(message.content === prefix + "M.catt") {
+    var fun_embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle(`:tools: Voici mes commandes amusantes !`)
+    .setThumbnail(message.author.avatarURL)
+    .addField("https://pastebin.com/Gi8hYcVX", "https://pastebin.com/Gi8hYcVX")
+    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
+    .setTimestamp()
+    message.channel.send(fun_embed);
+  }
 
   if (!message.content.startsWith(prefix)) return;
 
