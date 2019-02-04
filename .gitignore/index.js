@@ -57,6 +57,7 @@ if(message.content === prefix + "help") {
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
     .addField("F/info", "Donne des indormations sur le bot et le serveur !")
     .addField("F/8ball", "une question , une réponse")
+    .addField("F/M.catt", "aide le a conquérir discord")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
     message.channel.send(fun_embed);
@@ -98,6 +99,27 @@ if(message.content === prefix + "help") {
       .addField("Nombre de catégories et de salons", message.guild.channels.size)
       .addField("[Un petit don ici](https://www.paypal.me/sysy242)", " info - Funelia")
       message.channel.sendMessage(info_embed)
+      console.log("Un utilisateur a effectué la commande d'info !")
+  }
+    
+      if(message.content === prefix + "info") {
+      var mc_embed = new Discord.RichEmbed()
+      .setColor("#40A497")
+      .setTitle("⊂ヽ 
+　 ＼＼ Λ＿Λ  Voici Mr. meme cat
+　　 ＼( 'ㅅ' )   aidez Mr. memecat a conquérir
+　　　 >　⌒ヽdiscord en fesant copié collé 
+　　　/ 　 へ＼  dans 10 autres serveurs
+　　 /　　/　＼＼   sinon il sera jamais un meme
+　　 ﾚ　ノ　　 ヽつ
+　　/　/ 
+　 /　/|
+　(　(ヽ 
+　|　|、＼ 
+　| 丿 ＼ ⌒) 
+　| |　　) /")
+      .addField("[Un petit don ici](https://www.paypal.me/sysy242)", " info - Funelia")
+      message.channel.sendMessage(mc_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
 
@@ -474,7 +496,5 @@ var ball_embed = new Discord.RichEmbed()
 .setFooter('8ball :)')
 message.channel.send(ball_embed);
 }
-
-
 
 });
