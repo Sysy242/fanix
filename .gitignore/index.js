@@ -57,18 +57,6 @@ if(message.content === prefix + "help") {
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
     .addField("F/info", "Donne des indormations sur le bot et le serveur !")
     .addField("F/8ball", "une question , une réponse")
-    .addField("F/M.catt", "aide le a conquérir discord")
-    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
-    .setTimestamp()
-    message.channel.send(fun_embed);
-  }
-    
-      if(message.content === prefix + "M.catt") {
-    var fun_embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setTitle(`:tools: Voici mes commandes amusantes !`)
-    .setThumbnail(message.author.avatarURL)
-    .addField("https://pastebin.com/Gi8hYcVX", "https://pastebin.com/Gi8hYcVX")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
     message.channel.send(fun_embed);
@@ -112,27 +100,6 @@ if(message.content === prefix + "help") {
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
-    
-      if(message.content === prefix + "M.catt") {
-      var mc_embed = new Discord.RichEmbed()
-      .setColor("#40A497")
-      .setTitle("⊂ヽ 
-　 ＼＼ Λ＿Λ  Voici Mr. meme cat
-　　 ＼( 'ㅅ' )   aidez Mr. memecat a conquérir
-　　　 >　⌒ヽdiscord en fesant copié collé 
-　　　/ 　 へ＼  dans 10 autres serveurs
-　　 /　　/　＼＼   sinon il sera jamais un meme
-　　 ﾚ　ノ　　 ヽつ
-　　/　/ 
-　 /　/|
-　(　(ヽ 
-　|　|、＼ 
-　| 丿 ＼ ⌒) 
-　| |　　) /")
-      .addField("[Un petit don ici](https://www.paypal.me/sysy242)", " info - Funelia")
-      message.channel.sendMessage(mc_embed)
-      console.log("Un utilisateur a effectué la commande d'info !")
-  }
 
   if(message.content.startsWith(prefix + "kick")){
       if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission!");
@@ -154,26 +121,26 @@ if(message.content === prefix + "help") {
       });
   }
 
-  if(message.content.startsWith(prefix + "ban")) {
-      if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("Vous n'avez pas la perission");
+    if(message.content.startsWith(prefix + "ban")) {
+        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("Vous n'avez pas la perission");
 
-      if(message.mentions.users.size === 0) {
-          return message.channel.send("Vous devez mentionner un utilisateur");
-      }
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("Vous devez mentionner un utilisateur");
+        }
 
-      var ban = message.guild.member(message.mentions.users.first());
-      if(!ban) {
-          return message.channel.send("Je ne sais pas si l'utilisateur existe");
-      }
+        var ban = message.guild.member(message.mentions.users.first());
+        if(!ban) {
+            return message.channel.send("Je ne sais pas si l'utilisateur existe");
+        }
 
-      if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
-          return message.channel.send("Je n'ai pas la permission pour ban");
-      }
-      ban.ban().then(member => {
-          message.channel.send(`${member.user.username} est ban par ${message.author.username} !`)
-      });
-      
-  }
+        if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
+            return message.channel.send("Je n'ai pas la permission pour ban");
+        }
+        ban.ban().then(member => {
+            message.channel.send(`${member.user.username} est ban par ${message.author.username} !`)
+        });
+        
+    }
 
   if(message.content.startsWith(prefix + "clear")) {
       if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send("Vous n'avez pas la permission !");
@@ -507,5 +474,7 @@ var ball_embed = new Discord.RichEmbed()
 .setFooter('8ball :)')
 message.channel.send(ball_embed);
 }
+
+
 
 });
