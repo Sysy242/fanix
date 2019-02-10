@@ -105,6 +105,7 @@ if(message.content === prefix + "help") {
   .addField("Nom du serveur  ", message.guild.name)
   .addField("Nombre de membres", message.guild.members.size)
   .addField("Nombre de catégories et de salons", message.guild.channels.size)
+   .addField("ID du serveur :id:", message.guild.id)
   .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
   message.channel .sendMessage(infoserv_embed)
   console.log("Un utilisateur a effectué la commande d'info !")
