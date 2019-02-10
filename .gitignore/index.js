@@ -93,6 +93,7 @@ if(message.content === prefix + "help") {
       .setTitle("Voici les informations sur moi ")
       .addField(" :robot: Nom :", `${client.user.tag}`, true)
       .addField("Descriminateur du bot :hash:", `#${client.user.discriminator}`)
+      .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
@@ -104,6 +105,7 @@ if(message.content === prefix + "help") {
   .addField("Nom du serveur  ", message.guild.name)
   .addField("Nombre de membres", message.guild.members.size)
   .addField("Nombre de catégories et de salons", message.guild.channels.size)
+  .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
   message.channel .sendMessage(infoserv_embed)
   console.log("Un utilisateur a effectué la commande d'info !")
 
