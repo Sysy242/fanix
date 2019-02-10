@@ -90,16 +90,25 @@ if(message.content === prefix + "help") {
   if(message.content === prefix + "info") {
       var info_embed = new Discord.RichEmbed()
       .setColor("#40A497")
-      .setTitle("Voici les informations sur moi et le serveur !")
+      .setTitle("Voici les informations sur moi ")
       .addField(" :robot: Nom :", `${client.user.tag}`, true)
       .addField("Descriminateur du bot :hash:", `#${client.user.discriminator}`)
-      .addField("ID :id: ", `${client.user.id}`)
-      .addField("Nombre de membres", message.guild.members.size)
-      .addField("Nombre de catégories et de salons", message.guild.channels.size)
-      .addField("[Un petit don ici](https://www.paypal.me/sysy242)", " info - Funelia")
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
+
+  if(message.content === prefix + "infoserv") {
+  var infoserv_embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle("Information du serveur")
+  .addField("Nom du serveur  ", message.guild.name)
+  .addField("Nombre de membres", message.guild.members.size)
+  .addField("Nombre de catégories et de salons", message.guild.channels.size)
+  message.channel .sendMessage(infoserv_embed)
+  console.log("Un utilisateur a effectué la commande d'info !")
+
+  }
+
 
   if(message.content.startsWith(prefix + "kick")){
       if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission!");
