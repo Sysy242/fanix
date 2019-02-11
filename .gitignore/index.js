@@ -114,6 +114,7 @@ if(message.content === prefix + "help") {
   console.log("Un utilisateur a effectué la commande d'info !")
 
   }
+    if(message.content === prefix + "avatar") {
     
   var mentionned = message.mentions.users.first();
   var autheur;
