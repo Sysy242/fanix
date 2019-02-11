@@ -115,6 +115,9 @@ if(message.content === prefix + "help") {
 
   }
     if(message.content === prefix + "avatar") {
+        var avatar_embed = new Discord.RicheEmbed()
+        .setColor("RANDOM")
+        .setTitle("Voici ton avatar")
     
   var mentionned = message.mentions.users.first();
   var autheur;
@@ -146,6 +149,9 @@ if(message.content === prefix + "help") {
     }})
 
   }
+        
+    }
+  
 
 
   if(message.content.startsWith(prefix + "kick")){
