@@ -57,7 +57,6 @@ if(message.content === prefix + "help") {
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
     .addField("F/info", "Donne des informations sur le bot!")
     .addField("F/infoserv", "Donne des information sur le serveur")
-    .addField("F/avatar", "Affiche ton avatar")
     .addField("F/8ball", "une question , une réponse")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
@@ -114,45 +113,6 @@ if(message.content === prefix + "help") {
   console.log("Un utilisateur a effectué la commande d'info !")
 
   }
-    if(message.content === prefix + "avatar") {
-        var avatar_embed = new Discord.RicheEmbed()
-        .setColor("RANDOM")
-        .setTitle("Voici ton avatar")
-    
-  var mentionned = message.mentions.users.first();
-  var autheur;
-
-  if(mentionned) {
-    var autheur = mentionned;
-  } else{
-    var autheur = message.author
-  }
-
-  var newAvatar = autheur.avatarURL;
-
-  if(newAvatar.includes(".gif")) {
-    message.channel.send("", {
-      embed:{
-        image:{
-          url: autheur.avatarURL.slice(0,autheur.avatarURL.lastIndexOf("?size="))
-        },
-      }
-    })
-
-  } else {
-    message.channel.send("", {
-      embed:{
-        image:{
-          url: autheur.avatarURL
-        },
-
-    }})
-
-  }
-        
-    }
-  
-
 
   if(message.content.startsWith(prefix + "kick")){
       if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission!");
