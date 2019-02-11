@@ -98,7 +98,6 @@ if(message.content === prefix + "help") {
       .addField("Invitation du bot :", "https://bit.ly/2DysVVA")
       .addField("Serveur de support :", "https://discord.gg/wp8HbNE")
       .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
-      .setThumbnail("FanixBOTV1 - ©tous drois reserver")
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
