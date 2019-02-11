@@ -55,7 +55,9 @@ if(message.content === prefix + "help") {
     .setThumbnail(message.author.avatarURL)
     .addField("Bonjour", "Le bot répond !")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
-    .addField("F/info", "Donne des indormations sur le bot et le serveur !")
+    .addField("F/info", "Donne des informations sur le bot!")
+    .addField("F/infoserv", "Donne des information sur le serveur")
+    .addField("F/avatar", "Affiche ton avatar")
     .addField("F/8ball", "une question , une réponse")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
@@ -110,6 +112,37 @@ if(message.content === prefix + "help") {
   .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
   message.channel .sendMessage(infoserv_embed)
   console.log("Un utilisateur a effectué la commande d'info !")
+
+  }
+    
+  var mentionned = message.mentions.users.first();
+  var autheur;
+
+  if(mentionned) {
+    var autheur = mentionned;
+  } else{
+    var autheur = message.author
+  }
+
+  var newAvatar = autheur.avatarURL;
+
+  if(newAvatar.includes(".gif")) {
+    message.channel.send("", {
+      embed:{
+        image:{
+          url: autheur.avatarURL.slice(0,autheur.avatarURL.lastIndexOf("?size="))
+        },
+      }
+    })
+
+  } else {
+    message.channel.send("", {
+      embed:{
+        image:{
+          url: autheur.avatarURL
+        },
+
+    }})
 
   }
 
