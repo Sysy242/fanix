@@ -56,7 +56,8 @@ if(message.content === prefix + "help") {
     .setThumbnail(message.author.avatarURL)
     .addField("Bonjour", "Le bot répond !")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
-    .addField("F/info", "Donne des indormations sur le bot et le serveur !")
+    .addField("F/info", "Donne des informations sur le bot")
+    .addField("F/infoserv", "Donne des information sur le serv")
     .addField("F/8ball", "une question , une réponse")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
@@ -87,8 +88,6 @@ if(message.content === prefix + "help") {
       break;
         
 }
-
-if (!message.content)
 
   if(message.content === prefix + "info") {
       var info_embed = new Discord.RichEmbed()
