@@ -6,6 +6,7 @@ var prefix = "F/"
 
 client.login(process.env.TOKEN);
 
+
 client.on("ready", () =>{
     console.log("je suis prêt")
     client.user.setGame("Se faire dévlopper")
@@ -55,8 +56,7 @@ if(message.content === prefix + "help") {
     .setThumbnail(message.author.avatarURL)
     .addField("Bonjour", "Le bot répond !")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
-    .addField("F/info", "Donne des informations sur le bot!")
-    .addField("F/infoserv", "Donne des information sur le serveur")
+    .addField("F/info", "Donne des indormations sur le bot et le serveur !")
     .addField("F/8ball", "une question , une réponse")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
@@ -88,6 +88,8 @@ if(message.content === prefix + "help") {
         
 }
 
+if (!message.content)
+
   if(message.content === prefix + "info") {
       var info_embed = new Discord.RichEmbed()
       .setColor("#40A497")
@@ -97,7 +99,6 @@ if(message.content === prefix + "help") {
       .addField("Createur unique :", "Sysy sysy242#3935")
       .addField("Invitation du bot :", "https://bit.ly/2DysVVA")
       .addField("Serveur de support :", "https://discord.gg/wp8HbNE")
-      .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
@@ -111,10 +112,19 @@ if(message.content === prefix + "help") {
   .addField("Nombre de catégories et de salons", message.guild.channels.size)
   .addField("ID du serveur :id:", message.guild.id)
   .addField("Date creation du serveur", message.guild.createdAt)
-  .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
-  message.channel .sendMessage(infoserv_embed)
-  console.log("Un utilisateur a effectué la commande d'info !")
+  .addField("Nombre de roles dans le serveur :", message.guild.roles.size)
+  .addField("Createur du serveur :", message.guild.owner)
+  .setThumbnail(message.guild.iconURL)
+  message.channel .sendMessage(infoserv_embed)  
+  console.log("Un utilisateur a effectué la commande d'info du serveur !")
 
+  }
+
+  if(message.content === prefix + "avatar") {
+  var avatar_embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle("Voici ton avatar :") 
+  message.channel.send(avatar_embed)
   }
 
   if(message.content.startsWith(prefix + "kick")){
