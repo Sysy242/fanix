@@ -59,7 +59,7 @@ if(message.content === prefix + "help") {
     .addField("F/info", "Donne des informations sur le bot")
     .addField("F/infoserv", "Donne des information sur le serv")
     .addField("F/8ball", "une question , une réponse")
-    .addField("F/avatar", "Affiche ton avatar
+    .addField("F/avatar", "Affiche ton avatar")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
     message.channel.send(fun_embed);
