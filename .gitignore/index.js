@@ -103,6 +103,7 @@ if(message.content === prefix + "help") {
   }
 
   if(message.content === prefix + "infoserv") {
+  var guildCreateDate = message.guild.createdAt.toString().split(" ");
   var infoserv_embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle("Information du serveur")
@@ -110,7 +111,7 @@ if(message.content === prefix + "help") {
   .addField("Nombre de membres", message.guild.members.size)
   .addField("Nombre de catégories et de salons", message.guild.channels.size)
   .addField("ID du serveur :id:", message.guild.id)
-  .addField("Date creation du serveur", message.guild.createdAt)
+  .addField("Date creation du serveur", guildCreateDate[1] + ' ' + guildCreateDate[2] + ' ' + guildCreateDate[3])
   .addField("Nombre de roles dans le serveur :", message.guild.roles.size)
   .addField("Createur du serveur :", message.guild.owner)
   .setThumbnail(message.guild.iconURL)
@@ -118,6 +119,7 @@ if(message.content === prefix + "help") {
   console.log("Un utilisateur a effectué la commande d'info du serveur !")
 
   }
+
 
   if(message.content === prefix + "avatar") {
   var avatar_embed = new Discord.RichEmbed()
