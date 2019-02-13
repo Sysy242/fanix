@@ -101,6 +101,7 @@ if(message.content === prefix + "help") {
 }
 
   if(message.content === prefix + "info") {
+    var ns = message.client.guilds.size
       var info_embed = new Discord.RichEmbed()
       .setColor("#40A497")
       .setTitle("Voici les informations sur moi ")
@@ -109,6 +110,7 @@ if(message.content === prefix + "help") {
       .addField("Createur unique :", "Sysy sysy242#3935")
       .addField("Invitation du bot :", "https://bit.ly/2DysVVA")
       .addField("Serveur de support :", "https://discord.gg/wp8HbNE")
+      .addField("Nombres de serveur sur le quel le bot est !", ns)
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
