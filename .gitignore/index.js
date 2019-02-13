@@ -28,15 +28,28 @@ if(message.content === prefix + "help") {
     .setThumbnail(message.author.avatarURL)
     .addField(":tools: Modération", "Fais `F/mod` pour voir mes commandes de modération !")
     .addField(":tada: Fun", "Fais `F/fun` pour voir mes commandes d'animation !")
+    .addField(":newspaper: Utils", "Fais `F/utiles pour voir mes commandes utils !`")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
     message.channel.send(aide_embed);
   }
 
+  if(message.content === prefix + "utiles") {
+    var u_embed = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle(":newspaper: Voici mes commandes utiles !")
+    .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
+    .addField("F/info", "Donne des informations sur le bot")
+    .addField("F/infoserv", "Donne des information sur le serv")
+    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
+    .setTimestamp()
+    message.channel.send(u_embed);
+  }
+
   if(message.content === prefix + "mod") {
     var mod_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle(`:tools: Voici mes commandes modérations !`)
+    .setTitle(`:tools: Voici mes commandes de modérations !`)
     .setThumbnail(message.author.avatarURL)
     .addField("F/kick <@user>", "Kick l'utilisateur !")
     .addField("F/ban <@user>", "Ban l'utilisateur !")
@@ -56,15 +69,12 @@ if(message.content === prefix + "help") {
     .setThumbnail(message.author.avatarURL)
     .addField("Bonjour", "Le bot répond !")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
-    .addField("F/info", "Donne des informations sur le bot")
-    .addField("F/infoserv", "Donne des information sur le serv")
+    .addField("F/info", "Donne des indormations sur le bot et le serveur !")
     .addField("F/8ball", "une question , une réponse")
-    .addField("F/avatar", "Affiche ton avatar")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
     message.channel.send(fun_embed);
   }
-
   if (!message.content.startsWith(prefix)) return;
 
   var args = message.content.substring(prefix.length).split(" ");
