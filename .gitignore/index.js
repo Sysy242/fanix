@@ -6,19 +6,21 @@ var prefix = "F/"
 
 client.login(process.env.TOKEN);
 
-
 client.on("ready", () =>{
     console.log("je suis prêt")
-    client.user.setGame("F/help")
+    client.user.setGame("Se faire dévlopper")
 
 });
 
 client.on('message', async message => {
-
+  
 if(message.content === "Bonjour"){
-    message.reply(`Salut , sa va?`)
+    message.reply(`Salut , ça va?`)
     console.log("Le bot dit bonjour")
-}
+
+  }
+
+
 
 if(message.content === prefix + "help") {
     var aide_embed = new Discord.RichEmbed()
@@ -57,8 +59,10 @@ if(message.content === prefix + "help") {
     message.channel.send(fun_embed);
   }
 
-
+  if(message.content === prefix + "fun") {
+    message.channel.send(fun_embed);
   }
+
   if (!message.content.startsWith(prefix)) return;
 
   var args = message.content.substring(prefix.length).split(" ");
@@ -94,7 +98,7 @@ if(message.content === prefix + "help") {
       .addField("Createur unique :", "Sysy sysy242#3935")
       .addField("Invitation du bot :", "https://bit.ly/2DysVVA")
       .addField("Serveur de support :", "https://discord.gg/wp8HbNE")
-      .addField("Nombres de serveurs sur le quel le bot est !", ns)
+      .addField("Nombres de serveur sur le quel le bot est !", ns)
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
@@ -117,7 +121,6 @@ if(message.content === prefix + "help") {
 
   }
 
-
   if(message.content === prefix + "avatar") {
   var avatar_embed = new Discord.RichEmbed()
   .setColor("RANDOM")
@@ -131,7 +134,7 @@ if(message.content === prefix + "help") {
   
       if(message.mentions.users.size === 0) {
           return message.channel.send("Vous devez metionner un utilisaeur")
-      }
+      }q
       var kick = message.guild.member(message.mentions.users.first());
       if(!kick) {
           return message.channel.send("Je ne sais pas si l'utilisateur existe :/")
