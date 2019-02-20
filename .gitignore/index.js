@@ -23,57 +23,41 @@ if(message.content === "Bonjour"){
 if(message.content === prefix + "help") {
     var aide_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle(`:robot: Voici mes catégories d'aide !`)
-    .setDescription(`Voici mes commandes disponible :`)
+    .setTitle(`:robot: Voici l'aide`)
     .setThumbnail(message.author.avatarURL)
-    .addField(":tools: Modération", "Fais `F/mod` pour voir mes commandes de modération !")
-    .addField(":tada: Fun", "Fais `F/fun` pour voir mes commandes d'animation !")
-    .addField(":newspaper: Utils", "Fais `F/utiles pour voir mes commandes utils !`")
-    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
-    .setTimestamp()
-    message.channel.send(aide_embed);
-  }
-
-  if(message.content === prefix + "utiles") {
-    var u_embed = new Discord.RichEmbed()
+    .addField("Mes commandes elles sont ou??", "elles sont juste en bah !!!") 
+    let u_embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle(":newspaper: Voici mes commandes utiles !")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
     .addField("F/info", "Donne des informations sur le bot")
     .addField("F/infoserv", "Donne des information sur le serv")
-    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
-    .setTimestamp()
-    message.channel.send(u_embed);
-  }
-
-  if(message.content === prefix + "mod") {
-    var mod_embed = new Discord.RichEmbed()
+    let mod_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle(`:tools: Voici mes commandes de modérations !`)
-    .setThumbnail(message.author.avatarURL)
     .addField("F/kick <@user>", "Kick l'utilisateur !")
     .addField("F/ban <@user>", "Ban l'utilisateur !")
     .addField("F/clear nombre", "Supprime le nombre de messages indiqué")
     .addField("F/mute <@user>", "Mute l'utilisateur mentionné")
     .addField("F/unmute <@user>", "Unmute l'utilisateur mentionné")
     .addField("F/warn", "tu warn un utilisateur")
-    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
-    .setTimestamp()
-    message.channel.send(mod_embed);
-  }
-
-  if(message.content === prefix + "fun") {
-    var fun_embed = new Discord.RichEmbed()
+    let fun_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle(`:tools: Voici mes commandes amusantes !`)
-    .setThumbnail(message.author.avatarURL)
+    .setTitle(`:tada: Voici mes commandes amusantes !`)
     .addField("Bonjour", "Le bot répond !")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
     .addField("F/info", "Donne des indormations sur le bot et le serveur !")
     .addField("F/8ball", "une question , une réponse")
     .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
     .setTimestamp()
+    console.log("Un utilisateur a utiliser la commande d'help")
+    message.channel.send(aide_embed)
+    message.channel.send(u_embed)
+    message.channel.send(mod_embed)
     message.channel.send(fun_embed);
+  }
+
+
   }
   if (!message.content.startsWith(prefix)) return;
 
