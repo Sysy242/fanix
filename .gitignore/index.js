@@ -134,7 +134,7 @@ if(message.content === prefix + "help") {
   
       if(message.mentions.users.size === 0) {
           return message.channel.send("Vous devez metionner un utilisaeur")
-      }q
+      }
       var kick = message.guild.member(message.mentions.users.first());
       if(!kick) {
           return message.channel.send("Je ne sais pas si l'utilisateur existe :/")
