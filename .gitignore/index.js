@@ -89,13 +89,13 @@ if(message.content === prefix + "help") {
         
 }
 
-  if(message.content === prefix + "info") {
+  if(message.content === prefix + "antiraid") {
     var ns = message.client.guilds.size
       message.channel.send("Anti-Raid activée , si il y a un raid , vous serez avertie")
       console.log("Un utilisateur a effectué la commande d'info !")
   }
 
-  if(message.content === prefix + "antiraid") {
+  if(message.content === prefix + "info") {
     var ns = message.client.guilds.size
       var info_embed = new Discord.RichEmbed()
       .setColor("#40A497")
