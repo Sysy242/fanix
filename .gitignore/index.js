@@ -31,6 +31,7 @@ if(message.content === prefix + "help") {
     let u_embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle(":newspaper: Voici mes commandes utiles !")
+        .addField("F/antiraid", "Activations du programe anti raid")
     .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
     .addField("F/info", "Donne des informations sur le bot")
     .addField("F/infoserv", "Donne des information sur le serv")
@@ -89,6 +90,12 @@ if(message.content === prefix + "help") {
 }
 
   if(message.content === prefix + "info") {
+    var ns = message.client.guilds.size
+      message.channel.send("Anti-Raid activée , si il y a un raid , vous serez avertie")
+      console.log("Un utilisateur a effectué la commande d'info !")
+  }
+
+  if(message.content === prefix + "antiraid") {
     var ns = message.client.guilds.size
       var info_embed = new Discord.RichEmbed()
       .setColor("#40A497")
