@@ -2,13 +2,13 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-var prefix = "F/"
+var prefix = "§"
 
 client.login(process.env.TOKEN);
 
 client.on("ready", () =>{
     console.log("je suis prêt")
-    client.user.setGame("Se faire dévlopper")
+    client.user.setGame("🌟 La 6T")
 
 });
 
@@ -31,27 +31,26 @@ if(message.content === prefix + "help") {
     let u_embed = new Discord.RichEmbed()
     .setColor("RANDOM")
     .setTitle(":newspaper: Voici mes commandes utiles !")
-        .addField("F/antiraid", "Activations du programe anti raid")
-    .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
-    .addField("F/info", "Donne des informations sur le bot")
-    .addField("F/infoserv", "Donne des information sur le serv")
+    .addField("§stats", "Le bot vous envoie des informations sur votre profil !")
+    .addField("§info", "Donne des informations sur le bot")
+    .addField("§infoserv", "Donne des information sur le serv")
     let mod_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle(`:tools: Voici mes commandes de modérations !`)
-    .addField("F/kick <@user>", "Kick l'utilisateur !")
-    .addField("F/ban <@user>", "Ban l'utilisateur !")
-    .addField("F/clear nombre", "Supprime le nombre de messages indiqué")
-    .addField("F/mute <@user>", "Mute l'utilisateur mentionné")
-    .addField("F/unmute <@user>", "Unmute l'utilisateur mentionné")
-    .addField("F/warn", "tu warn un utilisateur")
+    .addField("§kick <@user>", "Kick l'utilisateur !")
+    .addField("§ban <@user>", "Ban l'utilisateur !")
+    .addField("§clear nombre", "Supprime le nombre de messages indiqué")
+    .addField("§mute <@user>", "Mute l'utilisateur mentionné")
+    .addField("§unmute <@user>", "Unmute l'utilisateur mentionné")
+    .addField("§warn", "tu warn un utilisateur")
     let fun_embed = new Discord.RichEmbed()
     .setColor('RANDOM')
     .setTitle(`:tada: Voici mes commandes amusantes !`)
     .addField("Bonjour", "Le bot répond !")
-    .addField("F/stats", "Le bot vous envoie des informations sur votre profil !")
-    .addField("F/info", "Donne des indormations sur le bot et le serveur !")
-    .addField("F/8ball", "une question , une réponse")
-    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
+    .addField("§stats", "Le bot vous envoie des informations sur votre profil !")
+    .addField("§info", "Donne des indormations sur le bot et le serveur !")
+    .addField("§8ball", "une question , une réponse")
+    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/eikodev)")
     .setTimestamp()
     console.log("Un utilisateur a utiliser la commande d'help")
     message.channel.send(aide_embed)
@@ -80,7 +79,7 @@ if(message.content === prefix + "help") {
       .setTitle(`Statistiques du joueurs : ${message.author.username}`)
       .addField(`ID du joueurs :id:`, msgauthor, true)
       .addField(`Date d'inscription du joueur :`, userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3])    
-    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
+    .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/eikodev)")
       .setThumbnail(message.author.avatarURL)
       message.reply("Tu peux regarder tes messages privés !")
       message.author.send(stats_embed);
@@ -102,10 +101,10 @@ if(message.content === prefix + "help") {
       .setTitle("Voici les informations sur moi ")
       .addField(" :robot: Nom :", "FanixBOTV1")
       .addField("Descriminateur du bot :hash:", `#${client.user.discriminator}`)
-      .addField("Createur unique :", "Sysy sysy242#3935")
-      .addField("Invitation du bot :", "https://bit.ly/2DysVVA")
-      .addField("Serveur de support :", "https://discord.gg/wp8HbNE")
+      .addField("Createur unique :", "𝑺𝒀𝑺𝒀#3742")
+      .addField("Serveur de support :", "https://discord.gg/K4jHWhd")
       .addField("Nombres de serveur sur le quel le bot est !", ns)
+          .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/eikodev)")
       message.channel.sendMessage(info_embed)
       console.log("Un utilisateur a effectué la commande d'info !")
   }
@@ -122,18 +121,11 @@ if(message.content === prefix + "help") {
   .addField("Date creation du serveur", guildCreateDate[1] + ' ' + guildCreateDate[2] + ' ' + guildCreateDate[3])
   .addField("Nombre de roles dans le serveur :", message.guild.roles.size)
   .addField("Createur du serveur :", message.guild.owner)
+      .addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/eikodev)")
   .setThumbnail(message.guild.iconURL)
   message.channel .sendMessage(infoserv_embed)  
   console.log("Un utilisateur a effectué la commande d'info du serveur !")
 
-  }
-
-  if(message.content === prefix + "avatar") {
-  var avatar_embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setTitle("Voici ton avatar :")
-  .setThumbnail(message.author.avatarURL)
-  message.channel.send(avatar_embed)
   }
 
   if(message.content.startsWith(prefix + "kick")){
@@ -504,7 +496,7 @@ var ball_embed = new Discord.RichEmbed()
 .setTitle('Voici ma commande 8ball :')
 .addField('Question :', `${args}`)
 .addField('Réponse', réponse[Math.round(Math.random() * réponse.length)])
-.addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/sysy242)")
+.addField(" un petit don ?", "[Clique ici pour être redirigé](https://www.paypal.me/eikodev)")
 .setFooter('8ball :)')
 message.channel.send(ball_embed);
 }
